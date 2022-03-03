@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/fd72424c86.js" crossorigin="anonymous"></script>
+    <title>YouTube</title>
+</head>
+<body class="">
+    <header class="flex z-10 fixed w-full justify-between items-center py-1 px-4 bg-slate-50 dark:bg-neutral-700">
+        <section id="left-nav" class="flex items-center">
+            <div id="mainButton" class="ml-2 mr-3 active:bg-gray-200 p-2 rounded-full">
+                <button class=""><i class="fas fa-bars fa-lg"></i></button>
+            </div>
+            <div style="background-image: url('photos/youtube-logo.png');" class=" h-12 w-28 bg-cover bg-center bg-no-repeat"></div>
+        </section>
+        <section class="py-1 flex flex-1 sm:justify-center justify-end">
+            <button id="reverter" class="bg-gray-200 py-1 px-4 hidden"><i class="fas fa-arrow-left"></i></button>
+            <input class="outline-none border-2 w-full max-w-lg p-1 rounded-l-sm dark:bg-zinc-900 sm:block hidden" type="search" id="searchBar" placeholder="Search">
+            <button id="searchButton" class="hidden sm:block sm:bg-gray-100 sm:hover:bg-gray-200 sm:rounded-r-sm sm:rounded-none rounded-full py-1 px-4 border-1 border-l-0 sm:focus:bg-gray-300 dark:bg-zinc-600"><i class="fas fa-search"></i></button>
+            <button id="search-button-sm" class ="sm:hidden bg-gray-100 hover:bg-gray-200 rounded-full py-1 px-4 border-1 border-l-0 focus:bg-gray-300 dark:bg-zinc-600" ><i class="fas fa-search"></i></button>
+        </section>
+        <section id="right-nav" class="flex relative items-center">
+            <div id="log-menu" class="cursor-pointer hover:bg-gray-100 p-2 w-max rounded-full"><i class="far fa-user"></i></div>
+            <div id="log-menu-child" class="fixed hidden top-14 w-max p-1 right-0 rounded-lg shadow-lg backdrop-blur-md bg-white">
+                <div id="sign-in-or-out-button" class="p-2 cursor-pointer hover:bg-gray-100"><i class="fas fa-key mr-1"></i><span id="sign-in-status">SIGN IN</span></div>
+                <div class="p-2 cursor-pointer hover:bg-gray-100"><i class="fas fa-moon mr-1 "></i><span>Dark Mode</span></div>
+            </div>
+            <div class="h-12 rounded-full" id="signInDiv"></div>
+            <!-- <div id="sign-in-or-out-button" class="ring-2 ring-blue-700 text-blue-700 h-8 w-20 text-center rounded-sm text-sm py-2 cursor-pointer"><i class="far fa-user"></i> SIGN IN</div> -->
+        </section>
+    </header>
+    <nav id="navFull" class="nav-main fixed z-10 overflow-y-auto w-56 h-full mt-14 bg-slate-50">
+        <section class="border-b-2 p-1">
+            <div class="flex items-center p-2 hover:bg-gray-100 focus:bg-gray-200 cursor-pointer">
+                <div class="ml-5 mr-3 w-7 box-border"><i class="fas fa-home"></i></div>
+                <div class="text-base ml-2 font-medium">Home</div>
+            </div>
+            <div class="flex items-center p-2 hover:bg-gray-100 focus:bg-gray-200 cursor-pointer">
+                <div class="ml-5 mr-3 w-7 box-border"><i class="far fa-compass"></i></div>
+                <div class="text-base ml-2 font-medium">Explore</div>
+            </div>
+            <div class="flex items-center p-2 hover:bg-gray-100 focus:bg-gray-200 cursor-pointer">
+                <div class="ml-5 mr-3 w-7 box-border"><i class="fas fa-id-card"></i></div>
+                <div class="text-base ml-2 font-medium">Subscriptions</div>
+            </div>
+        </section>
+        <section class="border-b-2 p-1">
+            <div class="flex items-center p-2 hover:bg-gray-100 focus:bg-gray-200 cursor-pointer">
+                <div class="ml-5 mr-3 w-7 box-border"><i class="fas fa-home"></i></div>
+                <div class="text-base ml-2 font-medium">Library</div>
+            </div>
+            <div class="flex items-center p-2 hover:bg-gray-100 focus:bg-gray-200 cursor-pointer">
+                <div class="ml-5 mr-3 w-7 box-border"><i class="far fa-compass"></i></div>
+                <div class="text-base ml-2 font-medium">History</div>
+            </div>
+            <div class="flex items-center p-2 hover:bg-gray-100 focus:bg-gray-200 cursor-pointer">
+                <div class="ml-5 mr-3 w-7 box-border"><i class="fas fa-id-card"></i></div>
+                <div class="text-base ml-2 font-medium">Your Videos</div>
+            </div>
+            <div class="flex items-center p-2 hover:bg-gray-100 focus:bg-gray-200 cursor-pointer">
+                <div class="ml-5 mr-3 w-7 box-border"><i class="fas fa-id-card"></i></div>
+                <div class="text-base ml-2 font-medium">Watch Later</div>
+            </div>
+            <div class="flex items-center p-2 hover:bg-gray-100 focus:bg-gray-200 cursor-pointer">
+                <div class="ml-5 mr-3 w-7 box-border"><i class="fas fa-id-card"></i></div>
+                <div class="text-base ml-2 font-medium">Liked Videos</div>
+            </div>
+        </section>
+        <section class="px-1 py-4">
+            <div class="mx-4 box-border text-base font-semibold ba">SUBSCRIPTIONS</div>
+            <div id="signInDiv1" class="p-4">
+                <div class="text-sm mb-2">Sign in to like videos, comment, and subscribe.</div>
+                <div id="sign-in-or-out-button1" class="ring-2 ring-blue-700 text-blue-700 h-8 w-24 text-center rounded-sm p-1 cursor-pointer"><i class="far fa-user"></i> SIGN IN</div>
+            </div>
+            <div class="" id ="subsDiv"></div>
+        </section>
+    </nav>
+    <nav id="navSmall" class="small-nav pt-20 px-1 box-content fixed w-[4.375rem] h-full bg-slate-50">
+        <section class = "flex flex-col items-center mb-8">
+            <div class="box-border"><i class="fas fa-home fa-lg"></i></div>
+            <div class="text-xs text-center">Home</div>
+        </section>
+        <section class = "flex flex-col items-center mb-8">
+            <div class="box-border"><i class="far fa-compass fa-lg"></i></div>
+            <div class="text-xs text-center">Explore</div>
+        </section>
+        <section class = "flex flex-col items-center mb-8">
+            <div class="box-border"><i class="fas fa-id-card fa-lg"></i></div>
+            <div class="text-[0.7rem] text-center">Subscriptions</div>
+        </section>
+        <section class = "flex flex-col items-center mb-8">
+            <div class="box-border"><i class="fas fa-home fa-lg"></i></div>
+            <div class="text-xs text-center">Library</div>
+        </section>
+    </nav>
+    <section id="videosHome" class="video-section pl-56 pt-[64px]">
+        <div id="videoArray" class=" w-full max-w-6xl mx-auto">
+            <!-- <div class="flex sm:flex-row flex-col sm:items-start items-center p-4">
+                <div class="w-full sm:mr-6 max-w-sm">
+                    <div style="background-image: url('photos/hq720.webp');" class=" w-full pt-[56.25%] bg-no-repeat bg-center bg-cover"></div>
+                </div>
+                <div class="flex-1 p-2">
+                    <div class="truncate overflow-hidden mb-2">Title</div>
+                    <div class="mb-2">24k views . 1hr ago</div>
+                    <div class="flex items-center mb-2">
+                        <img class="h-8 rounded-full mr-2" src="photos/channels4_profile.jpg" alt="">
+                        <div>codeDamn</div>
+                    </div>
+                    <div class="overflow whitespace-normal sm:h-12">The world's greatest heist comes to an end.Last season of Money Heist launching December 3rd, only on Netflix.
+    
+                        SUBSCRIBE: http://bit.ly/29qBUt7
+                        About Netflix:
+                        Netflix is the world's leading streaming entertainment service with 214 million paid memberships in over 190 countries enjoying TV series, documentaries and feature films across a wide variety of genres and languages. Members can watch as much as they want, anytime, anywhere, on any Internet-connected screen. Members can play, pause and resume watching, all without commercials or commitments.</div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js" integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+    <script src="scriptFiles/variables.js"></script>
+    <script src="scriptFiles/functions.js"></script>
+    <script src="scriptFiles/components.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
