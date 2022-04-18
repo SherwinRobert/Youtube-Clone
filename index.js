@@ -91,7 +91,7 @@ function setSigninStatus() {
     auth_token = user.wc.access_token
   }catch(error){
     console.log(error)
-    getVideos("home",defaultParams)
+    getVideos("home")
   }
 
   var isAuthorized = user.hasGrantedScopes(SCOPE);
