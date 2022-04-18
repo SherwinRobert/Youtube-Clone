@@ -91,6 +91,7 @@ function setSigninStatus() {
     auth_token = user.wc.access_token
   }catch(error){
     console.log(error)
+    alert("Please Log In to use this application. Your data will not be stored or accessed.")
     getVideos("home",defaultParams)
   }
 
