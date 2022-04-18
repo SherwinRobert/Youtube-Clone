@@ -99,7 +99,7 @@ document.getElementById("videosDiv").addEventListener("click",(e)=>{
     commentParams.videoId = wrapperDiv.id
     console.log(commentParams)
     commentRetriver(commentParams)
-    document.getElementById("vidFrame").setAttribute("src",`https://www.youtube.com/embed/${wrapperDiv.id}`)
+    document.getElementById("vidFrame").setAttribute("src",`https://www.youtube.com/embed/${wrapperDiv.id}?autoplay=1`)
   }
 })
 
