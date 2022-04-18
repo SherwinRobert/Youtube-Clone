@@ -88,10 +88,10 @@ function setSigninStatus() {
   
   try{
     console.log(user)
-    auth_token = user.wc.access_token
+    auth_token = user.xc.access_token
   }catch(error){
     console.log(error)
-    getVideos("home")
+    getVideos("home",defaultParams)
   }
 
   var isAuthorized = user.hasGrantedScopes(SCOPE);
