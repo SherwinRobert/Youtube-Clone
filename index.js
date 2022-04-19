@@ -88,7 +88,7 @@ function setSigninStatus() {
   
   try{
     console.log(user)
-    auth_token = user.wc.access_token
+    auth_token = user?.wc?.access_token || user?.xc?.access_token
   }catch(error){
     console.log(error)
     alert("Please Login to use this application. Your data will not be stored or accessed.Reload if the video is not streaming.")
